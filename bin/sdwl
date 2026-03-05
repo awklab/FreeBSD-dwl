@@ -1,1 +1,5 @@
+#!/bin/sh
+export $(dbus-launch)
+mako &
+slstatus -s | dwl -s "sh -c 'swaybg -i ~/Pictures/BSDvioletHD2.png &'"
 
