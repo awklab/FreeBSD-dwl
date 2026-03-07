@@ -75,7 +75,7 @@ static const struct arg args[] = {
     { run_command, "RAM %s M | ", "sysctl -n vm.stats.vm.v_active_count vm.stats.vm.v_wire_count vm.stats.vm.v_laundry_count | xargs | awk '{print int(($1+$2+$3)*4096/1024/1024)}'" },
 //	{ swap_used, "swap %si | ", NULL },
 //	{ vol_perc, "vol %s% | ", "/dev/mixer" },
-	{ vol_perc, "vol %s%% | ", "default" },
+	{ run_command, "vol %s%% | ", "mixer vol.volume | awk -F: '{print $2 * 100}'"},
 	{ wifi_perc, "wifi %s%% | ", "wlan0" },
 	{ battery_state, "bat %s ", "BAT1" },
 	{ battery_perc, "%s%% | ", "BAT1" },
